@@ -1,0 +1,98 @@
+<div class="section container">
+    <form (ngSubmit)="onSubmit()">
+      <div class="row card-panel">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input type="text" id="nombre" [formControl]="nombreControl" class="validate" required>
+          <label for="nombre">Nombre:</label>
+          <div *ngIf="nombreControl.invalid && nombreControl.touched" class="red-text">
+            Nombre es requerido
+          </div>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input type="text" id="apellido" [formControl]="apellidoControl" class="validate" required>
+          <label for="apellido">Apellido:</label>
+          <div *ngIf="apellidoControl.invalid && apellidoControl.touched" class="red-text">
+            Apellido es requerido
+          </div>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">date_range</i>
+          <input type="text" id="fecha" [formControl]="fechaControl" class="datepicker" required>
+          <label for="fecha">Fecha</label>
+          <div *ngIf="fechaControl.invalid && fechaControl.touched" class="red-text">
+            Fecha es requerida
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input type="text" id="nombreMesero" [formControl]="nombreMeseroControl" class="validate" required>
+          <label for="nombreMesero">Nombre del mesero:</label>
+          <div *ngIf="nombreControl.invalid && nombreControl.touched" class="red-text">
+            Nombre es requerido
+          </div>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">event_note</i>
+          <label>Califique al mesero</label>
+        </div>
+
+        <div class="input-field col s1">
+          <label>
+            <input type="radio" [formControl]="calificacionControl" value="1" required>
+            <span><i class="material-icons prefix">sentiment_very_dissatisfied</i></span>
+          </label>
+        </div>
+        <div class="input-field col s1">
+          <label>
+            <input type="radio" [formControl]="calificacionControl" value="2" required>
+            <span><span><i class="material-icons prefix">sentiment_dissatisfied</i></span></span>
+          </label>
+        </div>
+        <div class="input-field col s1">
+          <label>
+            <input type="radio" [formControl]="calificacionControl" value="3" required>
+            <span><i class="material-icons prefix">sentiment_neutral</i></span>
+          </label>
+        </div>
+        <div class="input-field col s1">
+          <label>
+            <input type="radio" [formControl]="calificacionControl" value="4" required>
+            <span><i class="material-icons prefix">sentiment_satisfied</i></span>
+          </label>
+        </div>
+        <div class="input-field col s1">
+          <label>
+            <input type="radio" [formControl]="calificacionControl" value="5" required>
+            <span><i class="material-icons prefix">sentiment_very_satisfied</i></span>
+          </label>
+        </div>
+
+        <div class="clearfix"></div>
+        <br>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea [formControl]="comentarioControl" class="materialize-textarea" placeholder="Ingrese su comentario respecto a la calificación" id="comentario" required></textarea>
+          <label for="comentario">Comentario:</label>
+          <div *ngIf="comentarioControl.invalid && comentarioControl.touched" class="red-text">
+            Comentario es requerido
+          </div>
+        </div>
+
+        <button type="submit" class="btn waves-effect">
+          <i class="material-icons right mr 2">check</i>
+          Enviar
+        </button>
+        <button type="reset" class="btn waves-effect">
+          <i class="material-icons right">clear</i>
+          Borrar
+        </button>
+      </div>
+    </form>
+</div>

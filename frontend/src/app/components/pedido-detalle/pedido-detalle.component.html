@@ -1,0 +1,17 @@
+<div class="container">
+    <div *ngIf="platoSeleccionado">
+        <h2>Detalles del Pedido</h2>
+        <p><strong>Nombre:</strong> {{ platoSeleccionado.nombre }}</p>
+        <p><strong>#Piezas:</strong> {{ platoSeleccionado.cant }}</p>
+        <p><strong>Descripción:</strong> {{ platoSeleccionado.desc }}</p>
+        <p><strong>Costo:</strong> ${{ platoSeleccionado.costo }}</p>
+        <hr>
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" [(ngModel)]="cantidad" min="1" max="10">
+        <br>
+        <label for="especificaciones">Especificaciones:</label>
+        <textarea id="especificaciones" name="especificaciones" [(ngModel)]="especificaciones"></textarea>
+        <br>
+        <button (click)="Pagar()" class="btn waves-effect waves-light" type="submit" name="action">Pedir</button>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+body{
+    width:100%;
+    margin:0px;
+    padding:0px;
+}
+h1 {
+    text-align: center;
+}
+  
+#about p {
+    text-align: justify;
+}
