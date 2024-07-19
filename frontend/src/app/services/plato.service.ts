@@ -28,4 +28,8 @@ export class PlatoService {
   agregarPlato(datos: any) : Observable<any>{
     return this.httpclient.post<any>(this.apiUrl+ "/agregar-plato", datos);
   }
+
+  eliminarPlato(id:String): Observable<any>{
+    return this.httpclient.delete<any>(this.apiUrl+'/borrar-plato/'+id);
+  }
 }

@@ -48,3 +48,20 @@ exports.obtener_plato_por_id = async(req, res) =>{
         res.status(500).send('Error al obtener el plato')
     }
 }
+
+exports.eliminarPlato = async(req, res) =>{
+    try{
+        const platoId = req.params.id;
+        let plato_borrar = await plato.findById(platoId)
+        
+        if (!plato_borrar) {
+            return res.status(404).json({ error: 'Pedido no encontrado' });
+        }
+
+        await plato.findOneAndDelete({_id:platoId})
+
+        res.status(200).json({ msg: 'Pedido eliminado exitosamente' });
+    }catch(err){
+        res.status(500).send('Error al eliminar el pedido')
+    }
+}

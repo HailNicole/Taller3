@@ -12,7 +12,7 @@ import { error } from 'node:console';
 })
 export class FormPlatosComponent implements OnInit{
 
-  constructor(private router: Router, private sharedDataService: SharedDataService, private platoService:PlatoService){ }
+  constructor(private router: Router, private sharedDataService: SharedDataService, private platoService:PlatoService,){ }
   ngOnInit(): void { 
     this.platoService.obtenerPlatos().subscribe(data =>{
       this.platos = data;
@@ -33,6 +33,17 @@ export class FormPlatosComponent implements OnInit{
       this.router.navigate(['/Pedir']);
     },error =>{
       console.log("Error al obtener el plato")
+    })
+  }
+
+  Eliminar(id:String) {
+    this.platoService.eliminarPlato(id).subscribe(res=>{
+      console.log("Plato Eliminado con Éxito");
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/VerMenu']);
+      });
+    },error =>{
+      console.log("Error al eliminar el plato");
     })
   }
 }

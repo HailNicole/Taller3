@@ -9,6 +9,7 @@ router.get('/platos', platoController.obtenerPlatos);
 router.get('/obtener_id_plato/:id', platoController.obtener_id_plato);
 router.get('/obtener_plato_por_id/:id', platoController.obtener_plato_por_id);
 router.post('/agregar-plato', platoController.crearPlato);
+router.delete('/borrar-plato/:id', platoController.eliminarPlato);
 
 router.get('/pedidos', pedidoController.obtenerPedidos);
 router.get('/obtener_pedido_por_id/:id', pedidoController.obtenerPedidoPorId);
