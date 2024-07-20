@@ -1,0 +1,28 @@
+<div class="container">
+    COMENTARIOS
+    <div>
+        <table class="responsive-table">
+            <thead>
+              <tr>
+                  <th scope="col">Nombre Cliente</th>
+                  <th scope="col">Apellido Cliente</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Nombre Mesero</th>
+                  <th scope="col">Calificación</th>
+                  <th scope="col">Comentario</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let comentario of arrComentarios">
+                    <td>{{comentario.nombre}}</td>
+                    <td>{{comentario.apellido}} Piezas</td>
+                    <td>{{comentario.fecha}}</td>
+                    <td>{{comentario.nombreMesero}}</td>
+                    <td>{{comentario.calificacion}}</td>
+                    <td>{{comentario.comentario}}</td>
+                    <td><button [routerLink]="['/editComentario', comentario._id]" class="btn btn-info">Editar Comentario</button></td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

@@ -12,6 +12,8 @@ import { PedidoDetalleComponent } from './components/pedido-detalle/pedido-detal
 import { HomeComponent } from './components/home/home.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { EditarPedidoComponent } from './components/editar-pedido/editar-pedido.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
+import { EditComentarioComponent } from './components/edit-comentario/edit-comentario.component';
 
 
 const rutas: Routes = [
@@ -20,6 +22,8 @@ const rutas: Routes = [
   { path: 'Pedidos', component: PedidosComponent },
   { path: 'Pedir', component: PedidoDetalleComponent },
   { path: 'EditarPedido', component: EditarPedidoComponent },
+  { path: 'Comentarios', component: ComentariosComponent},
+  { path: 'editComentario/:comentarioId', component: EditComentarioComponent },
   { path: 'Calificar', component: FormularioComponent },
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   { path: '**', redirectTo: '/Home' }
@@ -34,7 +38,9 @@ const rutas: Routes = [
     PedidoDetalleComponent,
     HomeComponent,
     FormularioComponent,
-    EditarPedidoComponent
+    EditarPedidoComponent,
+    ComentariosComponent,
+    EditComentarioComponent
   ],
   imports: [
     BrowserModule,

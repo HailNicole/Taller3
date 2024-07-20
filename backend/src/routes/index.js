@@ -19,5 +19,8 @@ router.put('/editar-pedido/:id', pedidoController.editarPedido);
 router.delete('/borrar-pedido/:id', pedidoController.eliminarPedido);
 
 router.post('/agregar-comentario', comentarioController.agregarComentario);
+router.get('/comentarios', comentarioController.getComentarios); 
+router.get('/comentarios/:comentarioId', comentarioController.getComentario);
+router.put('/editComentario/:comentarioId', comentarioController.setComentario);
 
 module.exports = router;
